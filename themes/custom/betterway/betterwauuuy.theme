@@ -1,0 +1,28 @@
+<?php
+function a_theme_preprocess_page__front(array &$variables) {
+  $variables['attributes']['caption'] = theme_get_setting('foo_example');
+
+  // This prevents image widget templates from rendering preview container HTML
+  // to users that do not have permission to access these previews.
+  // @todo revisit in https://drupal.org/node/953034
+  // @todo revisit in https://drupal.org/node/3114318
+//   if (isset($data['preview']['#access']) && $data['preview']['#access'] === FALSE) {
+//     unset($data['preview']);
+ // }
+}
+
+
+function a_theme_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id = NULL) {
+    // Work-around for a core bug affecting admin themes. See issue #943212.
+    if (isset($form_id)) {
+      return;
+    }
+  
+    $form['foo_example'] = array(
+      '#type'          => 'textfield',
+      '#title'         => t('Widget'),
+      '#default_value' => theme_get_setting('foo_example'),
+      '#description'   => t("Place this text in the widget spot on your site."),
+    );
+  }
+  
