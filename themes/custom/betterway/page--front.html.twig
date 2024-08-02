@@ -51,32 +51,31 @@
     {{ page.header }}
   </header>
 
-  {{ page.primary_menu }}
+  {# {{ page.primary_menu }}
   {{ page.secondary_menu }}
 
   {{ page.breadcrumb }}
 
   {{ page.highlighted }}
 
-  {{ page.help }}
+  {{ page.help }} #}
 
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
     <div class="layout-content">
-    hello there fffccccssss
       {{ page.content }}
     </div>{# /.layout-content #}
 
-    {% if page.sidebar_first %}
+    {% if page.sidebar_left %}
       <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
+        {{ page.sidebar_left }}
       </aside>
     {% endif %}
 
-    {% if page.sidebar_second %}
+    {% if page.sidebar_right %}
       <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
+        {{ page.sidebar_right }}
       </aside>
     {% endif %}
 

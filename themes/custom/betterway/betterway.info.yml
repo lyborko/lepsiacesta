@@ -9,3 +9,9 @@ base theme: stable9
 stylesheets-remove: #malo by odstranit tieto defaultne css ale nefunguje to spolahlivo
   - core/themes/stable9/css/views/views.module.css
   - core/themes/stable9/css/system/components/align.module.css
+regions:
+  header: 'Header'
+  content: 'Main content'
+  sidebar_left: 'Left sidebar'
+  sidebar_right: 'Right sidebar'
+  footer: 'Footer'
