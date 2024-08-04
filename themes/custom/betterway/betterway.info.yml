@@ -1,17 +1,16 @@
 name: 'BetterWay'
 type: theme
-description: 'Theme for Lepsia Cesta,  n.o'
-core_version_requirement: '>=9.2'
+description: 'Theme for Lepsia Cesta, n.o'
+core_version_requirement: '>=10.1'
 libraries:
   - betterway/global-css
   - betterway/global-js
 base theme: stable9
-stylesheets-remove: #malo by odstranit tieto defaultne css ale nefunguje to spolahlivo
-  - core/themes/stable9/css/views/views.module.css
-  - core/themes/stable9/css/system/components/align.module.css
 regions:
   header: 'Header'
+  primary_menu: 'Primary menu'
   content: 'Main content'
   sidebar_left: 'Left sidebar'
   sidebar_right: 'Right sidebar'
   footer: 'Footer'
+  

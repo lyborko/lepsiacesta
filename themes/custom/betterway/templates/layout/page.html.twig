@@ -45,42 +45,41 @@
 #}
 <div class="layout-container">
 
-  <header role="banner">
-    {{ page.header }}
-  </header>
+{% include directory ~ '/partials/header.html.twig' %}
+{#{% include '/partials/header.html.twig' %}#}
+    {{ page.primary_menu }}
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
+  {#  {{ page.secondary_menu }}
 
   {{ page.breadcrumb }}
 
   {{ page.highlighted }}
 
-  {{ page.help }}
+  {{ page.help }} #}
 
-  <main role="main">
+  <main class="layout-main" role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+    {% if page.sidebar_left %}
+      <aside class="layout-sidebar sidebar-left" role="complementary">
+        {{ page.sidebar_left }}
+      </aside>
+    {% endif %}
 
     <div class="layout-content">
       {{ page.content }}
     </div>{# /.layout-content #}
 
-    {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
+    {% if page.sidebar_right %}
+      <aside class="layout-sidebar sidebar-right" role="complementary">
+        {{ page.sidebar_right }}
       </aside>
     {% endif %}
 
   </main>
 
   {% if page.footer %}
-    <footer role="contentinfo">
+    <footer class="layout-footer" role="contentinfo">
       {{ page.footer }}
     </footer>
   {% endif %}
