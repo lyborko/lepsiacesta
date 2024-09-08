@@ -23,8 +23,26 @@
             animation-fill-mode: forwards;
             /* background-image: url("zzz/PB_24-08-15_Portrety_0282.jpg"); */
             background-image: url("themes/custom/betterway/images/all/PB_24-08-15_Portrety_0333.jpg");
-            height: 580px;
+            /*height: 380px;*/
+             mask:
+                linear-gradient(#000 0 0), 
+               /*  fade only the padding area 
+                (in the opposite direction) */
+                linear-gradient(#0000 90%, #000 100%) padding-box;
+            mask-composite: exclude; 
+
         }   
+
+        /* .fadebg::after { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            bottom: 0; 
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%); 
+            pointer-events: none; /* Allow clicks to pass through */ 
+        /* }   */
 
         @keyframes fadeInAnimation {
             0% {
@@ -49,7 +67,44 @@
     <p>
         This page will fade in
         after loading
+
+        This is probably not relevant to some people, but I find that I'm always searching for this information when I need to print out a URL or find the current page path.
+The difficulty is that finding or printing out a URL is very contextual and there is more than one way to get or use this information in Drupal. You might have a node object that you need to convert into a fully qualified path, or you want to print out the path of a route, each of which have different approaches. I think that's why there are so many questions asking variations of this topic on sites like Stackoverflow.
+</p>
+<p>
+What is surprising to me is that there is very little documentation on drupal.org about this. Creating URLs and printing out links is perhaps the most common thing that needs to be done by developers creating themes, outside of changing the classes or markup of a block of HTML.
+In this article I will go through some of the main things you should be aware of when using paths and URLs in Drupal and then look at examples of using each.
+</p>
+<p>
+The main objects I will address here are \Symfony\Component\HttpFoundation\Request, \Drupal\Core\Url and \Drupal\Core\Link, all of which have their own uses. After that I will look at other ways in which links and URLs can be created.
+
     </p>
+    <p>
+        When you respond to a page request in Drupal you will have access to a Request object. This is an instance of \Symfony\Component\HttpFoundation\Request and can be used to tell you all about the current request. As you might see from the name, this is actually a Symfony component and therefore has no knowledge about Drupal.
+
+        This object is an important starting point when looking for URL information as it's a good way of getting the current path, host, or other parameters being sent to the page.
+        
+        Getting the Request object is a case of just asking Drupal for it. You can do this statically, like the following.
+    </p>
+<p>
+    This is probably not relevant to some people, but I find that I'm always searching for this information when I need to print out a URL or find the current page path.
+    The difficulty is that finding or printing out a URL is very contextual and there is more than one way to get or use this information in Drupal. You might have a node object that you need to convert into a fully qualified path, or you want to print out the path of a route, each of which have different approaches. I think that's why there are so many questions asking variations of this topic on sites like Stackoverflow.
+    
+    What is surprising to me is that there is very little documentation on drupal.org about this. Creating URLs and printing out links is perhaps the most common thing that needs to be done by developers creating themes, outside of changing the classes or markup of a block of HTML.
+    In this article I will go through some of the main things you should be aware of when using paths and URLs in Drupal and then look at examples of using each.
+    
+    The main objects I will address here are \Symfony\Component\HttpFoundation\Request, \Drupal\Core\Url and \Drupal\Core\Link, all of which have their own uses. After that I will look at other ways in which links and URLs can be created.
+
+</p>
+<p>
+
+    When you respond to a page request in Drupal you will have access to a Request object. This is an instance of \Symfony\Component\HttpFoundation\Request and can be used to tell you all about the current request. As you might see from the name, this is actually a Symfony component and therefore has no knowledge about Drupal.
+
+This object is an important starting point when looking for URL information as it's a good way of getting the current path, host, or other parameters being sent to the page.
+
+Getting the Request object is a case of just asking Drupal for it. You can do this statically, like the following.
+</p>
+
 </div>
 </body>
 
