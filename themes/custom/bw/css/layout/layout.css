@@ -1,0 +1,83 @@
+.layout-container {
+    background-color:antiquewhite;
+}
+
+/* .layout-header {
+    background-color: #EEE;
+    color: #1c1919;
+    padding: 1rem;
+    text-align: center;
+} */
+
+
+.layout-primary-user-menu {
+    display: flex; /* Flexbox usporiadanie */
+    padding: 1rem;
+    flex-direction: row; /* Usporiadanie detí horizontálne (stĺpce vedľa seba) */
+    gap: 1rem; /* Priestor medzi stĺpcami */
+}
+
+.layout-primary-menu {
+    /*width: 200px;  Pevná šírka pre prvý sidebar */
+    flex: 1; /* Dynamická šírka na vyplnenie zvyšku priestoru */
+    padding: 1rem;
+    background-color: #ddd;
+}
+
+.layout-user-menu {
+    width: 200px; /* Pevná šírka pre druhý sidebar */
+    padding: 1rem;
+    background-color: #dc5f5f;
+}
+
+.layout-main {
+    display: flex; /* Flexbox usporiadanie */
+    padding: 1rem;
+    flex-direction: row; /* Usporiadanie detí horizontálne (stĺpce vedľa seba) */
+    min-height: 100vh;
+    gap: 1rem; /* Priestor medzi stĺpcami */
+}
+
+.layout-sidebar-first {
+    width: 200px; /* Pevná šírka pre prvý sidebar */
+    padding: 1rem;
+    background-color: #ddd;
+}
+
+.layout-content {
+    flex: 1; /* Dynamická šírka na vyplnenie zvyšku priestoru */
+    padding: 1rem;
+    background-color: #f4f4f4;
+}
+
+.layout-sidebar-second {
+    width: 200px; /* Pevná šírka pre druhý sidebar */
+    padding: 1rem;
+    background-color: #dc5f5f;
+}
+
+.layout-footer {
+    background-color: #eee;
+    color: #1c1919;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Responsive Layout */
+/* @media (max-width: 768px) {
+    .layout-main {
+        flex-direction: column;
+    }
+
+    .layout-sidebar {
+        width: 100%;
+        margin: 0 0 1rem 0;
+    }
+
+    .sidebar-left {
+        margin-right: 0;
+    }
+
+    .sidebar-right {
+        margin-left: 0;
+    } */

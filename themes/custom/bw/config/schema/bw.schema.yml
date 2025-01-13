@@ -1,0 +1,8 @@
+# Schema for the configuration files of the bw theme.
+bw.settings:
+  type: theme_settings
+  label: 'bw settings'
+  mapping:
+    example:
+      type: string
+      label: Example

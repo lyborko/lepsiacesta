@@ -1,0 +1,21 @@
+name: bw
+type: theme
+base theme: stable9
+description: A flexible theme with a responsive, mobile-first layout.
+package: lyborko
+core_version_requirement: ^10
+libraries:
+  - bw/global
+regions:
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  user_menu: 'User menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  featured: 'Featured'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: 'Footer'
