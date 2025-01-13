@@ -1,0 +1,12 @@
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="0 0 100 125">
+    <g transform="translate(0,-952.36218)">
+        <path
+            style="text-indent:0;text-transform:none;direction:ltr;block-progression:tb;baseline-shift:baseline;color:#000000;enable-background:accumulate;"
+            d="m 49.871504,971.38126 c -0.22343,0.0222 -0.39483,0.092 -0.5,0.15625 l -38,29.99999 c -0.40565,0.2764 -0.51479,1.0202 -0.1875,1.4375 0.3273,0.4173 1.02027,0.4836 1.4375,0.1563 l 37.375,-29.50004 37.375,29.50004 c 0.41723,0.3273 1.1102,0.261 1.4375,-0.1563 0.32729,-0.4173 0.24198,-1.1708 -0.1875,-1.4375 l -38,-29.99999 c -0.25113,-0.15302 -0.52657,-0.17844 -0.75,-0.15625 z m -25.875,25.0625 -2,1.5625 0,34.34384 a 1.0001,1.0001 0 0 0 1,1 l 17,0 a 1.0001,1.0001 0 0 0 1,-1 l 0,-19.0001 18,0 0,19.0001 a 1.0001,1.0001 0 0 0 1,1 l 17,0 a 1.0001,1.0001 0 0 0 1,-1 l 0,-34.34384 -2,-1.5625 0,34.90634 -15,0 0,-19.0001 a 1.0001,1.0001 0 0 0 -1,-1 l -20,0 a 1.0001,1.0001 0 0 0 -1,1 l 0,19.0001 -15,0 0,-34.90634 z"
+            fill="#000000" fill-opacity="1" stroke="none" marker="none" visibility="visible" display="inline"
+            overflow="visible" />
+    </g>
+</svg>
