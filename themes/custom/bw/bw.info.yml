@@ -8,8 +8,9 @@ libraries:
   - bw/global
 regions:
   header: 'Header'
-  primary_menu: 'Primary menu'
-  user_menu: 'User menu'
+  primary_menu_left: 'Primary menu on the left'
+  primary_menu_center: 'Primary menu on the center'
+  primary_menu_right: 'Primary menu on the right'
   secondary_menu: 'Secondary menu'
   page_top: 'Page top'
   page_bottom: 'Page bottom'

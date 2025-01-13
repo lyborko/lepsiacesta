@@ -5,5 +5,6 @@ ECHO =========================
 rar a C:\xampp\htdocs\lepsiacesta\db_lepsiacesta.rar C:\xampp\htdocs\lepsiacesta\db_lepsiacesta.sql
 ECHO ==========================
 del C:\xampp\htdocs\lepsiacesta\db_lepsiacesta.sql
-git -m "cvaka"
+set arg1=%1
+git commit -m "%arg1%"
 git push origin master

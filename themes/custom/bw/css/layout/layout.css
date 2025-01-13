@@ -10,21 +10,26 @@
 } */
 
 
-.layout-primary-user-menu {
+.layout-menu-left-center-right {
     display: flex; /* Flexbox usporiadanie */
     padding: 1rem;
     flex-direction: row; /* Usporiadanie detí horizontálne (stĺpce vedľa seba) */
     gap: 1rem; /* Priestor medzi stĺpcami */
 }
+.layout-menu-left {
+    width: 200px; /* Pevná šírka pre druhý sidebar */
+    padding: 1rem;
+    background-color: #6d59ed;
+}
 
-.layout-primary-menu {
+.layout-menu-center {
     /*width: 200px;  Pevná šírka pre prvý sidebar */
     flex: 1; /* Dynamická šírka na vyplnenie zvyšku priestoru */
     padding: 1rem;
     background-color: #ddd;
 }
 
-.layout-user-menu {
+.layout-menu-right {
     width: 200px; /* Pevná šírka pre druhý sidebar */
     padding: 1rem;
     background-color: #dc5f5f;
@@ -34,8 +39,9 @@
     display: flex; /* Flexbox usporiadanie */
     padding: 1rem;
     flex-direction: row; /* Usporiadanie detí horizontálne (stĺpce vedľa seba) */
-    min-height: 100vh;
+    min-height: 30vh;
     gap: 1rem; /* Priestor medzi stĺpcami */
+    overflow-y: auto;
 }
 
 .layout-sidebar-first {

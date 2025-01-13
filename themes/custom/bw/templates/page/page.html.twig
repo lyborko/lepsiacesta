@@ -45,54 +45,66 @@
 #}
 <div class="layout-container">
 
-  <header role="banner">
-    {{ page.header }}
-  </header>
+	<header role="banner">
+		{{ page.header }}
+	</header>
 
-  <div class="layout-primary-user-menu">
-  <div class="layout-primary-menu">
-  {{ page.primary_menu }}
-  </div>
-    {% if page.user_menu %}
-      <div class="layout-user-menu" role="complementary">
-        {{ page.user_menu }}
-      </div>
-    {% endif %}
-  </div>
+	<div class="layout-menu-left-center-right">
+    {% if page.primary_menu_left %}
+			<div class="layout-menu-left" role="complementary">
+				{{ page.primary_menu_left }}
+			</div>
+		{% endif %}    
 
-  {{ page.secondary_menu }}
+    {% if page.primary_menu_center %}
+			<div class="layout-menu-center" role="complementary">
+				{{ page.primary_menu_center }}
+			</div>
+		{% endif %}
 
-  {{ page.breadcrumb }}
+		{% if page.primary_menu_right %}
+			<div class="layout-menu-right" role="complementary">
+				{{ page.primary_menu_right }}
+			</div>
+		{% endif %}
+	</div>
 
-  {{ page.highlighted }}
+	{{ page.secondary_menu }}
 
-  {{ page.help }}
+	{{ page.breadcrumb }}
 
-  <main class="layout-main" role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+	{{ page.highlighted }}
 
-    {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
+	{{ page.help }}
 
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
+	<main class="layout-main" role="main">
+		{# <a id="main-content" tabindex="-1"></a> #}
+		{# link is in html.html.twig #}
 
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
+		{% if page.sidebar_first %}
+			<aside class="layout-sidebar-first" role="complementary">
+				{{ page.sidebar_first }}
+			</aside>
+		{% endif %}
 
-  </main>
+		<div class="layout-content">
+			{{ page.content }}
+		</div>
+		{# /.layout-content #}
 
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
+		{% if page.sidebar_second %}
+			<aside class="layout-sidebar-second" role="complementary">
+				{{ page.sidebar_second }}
+			</aside>
+		{% endif %}
 
-</div>{# /.layout-container #}
+	</main>
+
+	{% if page.footer %}
+		<footer role="contentinfo">
+			{{ page.footer }}
+		</footer>
+	{% endif %}
+
+</div>
+{# /.layout-container #}
