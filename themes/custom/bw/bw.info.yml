@@ -6,6 +6,7 @@ package: lyborko
 core_version_requirement: ^10
 libraries:
   - bw/global
+  - bw/fontawesome
 regions:
   header: 'Header'
   primary_menu_left: 'Primary menu on the left'

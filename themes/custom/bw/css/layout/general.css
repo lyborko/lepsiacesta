@@ -5,7 +5,10 @@
   --bw-global-color-text: #555555;
   --bw-global-color-dark: #282826;
   --bw-global-color-dark2: #24252c;
+  --width: 1200px;
   font-family: "Inter", Sans-serif;
-  display: flex;
-  justify-content: center; 
+  /* display: flex;
+  width: 100%;
+  align-items: center;   
+  flex-direction: column; */
 }

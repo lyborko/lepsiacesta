@@ -1,0 +1,23 @@
+@keyframes fly-in-left {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fly-in-right {
+    from {
+        opacity: 0;
+        transform: translate3d(100%,0,0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}

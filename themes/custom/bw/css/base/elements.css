@@ -42,10 +42,8 @@
   margin-bottom: 10px;
 }
 .bw-theme a {
-  color: var(--bw-global-color-1e622a1);
-}
-.bw-theme a:hover {
-  color: var(--bw-global-color-accent);
+  text-decoration: none;
+	transition: color 0.3s ease; /* plynulá zmena farby */
 }
 .bw-theme h1 {
   color: var(--bw-global-color-secondary);

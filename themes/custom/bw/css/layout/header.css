@@ -1,0 +1,97 @@
+.layout-inline-icon {
+    display: inline-block;
+    width: 24px;
+    /* Šírka ikony */
+    height: 24px;
+    /* Výška ikony */
+    vertical-align: middle;
+    /* Zarovnanie ikony s textom */
+    background-color: transparent;
+    /* Priehľadné pozadie */
+    background-size: cover;
+    /* Prispôsobenie veľkosti ikony */
+    margin-right: 0.5rem;
+    /* Medzera medzi ikonou a textom */
+}
+
+.header-top {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    /* flex-grow: 2;
+    flex-shrink: 1; */
+    width: 100%;
+    flex-wrap: nowrap;
+    font-size: 1 rem;
+    height: 34px;
+    /* max-width: min(100%, var(--width)); 
+    max-width: 1500px;*/
+    background-color: var(--bw-global-color-primary);
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.centered-content {
+    max-width: 1200px; 
+    /* maximálna šírka */
+    width: 100%;
+    /* zaberie 100% šírky rodiča, ak je menší */
+    margin: 0 auto;
+    /* centrovanie horizontálne */
+    box-sizing: border-box;
+    /* aby paddingy nepresahovali šírku */
+    overflow: hidden;
+    /* skryje pretečený obsah */
+}
+
+ul.responsive {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;
+    color: #ffffff;
+    width: 100%;
+    /* pridaj, aby sa li nescrollovalo */
+}
+ul.responsive li {
+    display: inline-block; /* alebo block */
+    opacity: 0;
+}
+/* Prvý li */
+ul.responsive li:first-child {
+    animation: fly-in-left 1.25s ease-out forwards;
+}
+
+/* Druhý li */
+ul.responsive li:last-child {
+    animation: fly-in-right 1.25s ease-out forwards;
+}
+
+/* po prejdení myšou */
+a {
+    color:#FFFFFF;
+    /* cieľová ružová */
+}
+a:hover {
+    color: var(--bw-global-color-secondary);
+    /* cieľová ružová */
+}
+
+@media(max-width: 600px) {
+    .centered-content ul li:first-child {
+        display: none !important;
+    }
+}
+
+/* a.header-top-tel {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* plynulá zmena farby 
+} */

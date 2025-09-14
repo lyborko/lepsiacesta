@@ -43,20 +43,20 @@
  * @see html.html.twig
  */
 #}
+<header role="banner">
+	{{ page.header }}
+</header>
 <div class="layout-container">
 
-	<header role="banner">
-		{{ page.header }}
-	</header>
 
 	<div class="layout-menu-left-center-right">
-    {% if page.primary_menu_left %}
+		{% if page.primary_menu_left %}
 			<div class="layout-menu-left" role="complementary">
 				{{ page.primary_menu_left }}
 			</div>
-		{% endif %}    
+		{% endif %}
 
-    {% if page.primary_menu_center %}
+		{% if page.primary_menu_center %}
 			<div class="layout-menu-center" role="complementary">
 				{{ page.primary_menu_center }}
 			</div>
@@ -81,9 +81,8 @@
 		{# <a id="main-content" tabindex="-1"></a> #}
 		{# link is in html.html.twig #}
 
-		{% if page.sidebar_first %}
-			<aside class="layout-sidebar-first" role="complementary">
-				{{ page.sidebar_first }}
+			{% if page.sidebar_first %}
+				<aside class="layout-sidebar-first" role="complementary"> {{ page.sidebar_first }}
 			</aside>
 		{% endif %}
 

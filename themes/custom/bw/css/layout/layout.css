@@ -1,6 +1,9 @@
 .layout-container {
-    background-color:rgb(203, 163, 111);
-    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(203, 163, 111);
+    width: 100%;
 }
 
 /* .layout-header {
@@ -12,53 +15,70 @@
 
 
 .layout-menu-left-center-right {
-    display: flex; /* Flexbox usporiadanie */
+    display: flex;
+    /* Flexbox usporiadanie */
     padding: 1rem;
-    flex-direction: row; /* Usporiadanie detí horizontálne (stĺpce vedľa seba) */
-    gap: 1rem; /* Priestor medzi stĺpcami */
+    flex-direction: row;
+    width: 100%;
+    max-width: min(100%, var(--width));
+    /* Usporiadanie detí horizontálne (stĺpce vedľa seba) */
+    gap: 1rem;
+    /* Priestor medzi stĺpcami */
 }
+
 .layout-menu-left {
-    width: 200px; /* Pevná šírka pre druhý sidebar */
+    width: 200px;
+    /* Pevná šírka pre druhý sidebar */
     padding: 1rem;
     background-color: #6d59ed;
 }
 
 .layout-menu-center {
     /*width: 200px;  Pevná šírka pre prvý sidebar */
-    flex: 1; /* Dynamická šírka na vyplnenie zvyšku priestoru */
+    flex: 1;
+    /* Dynamická šírka na vyplnenie zvyšku priestoru */
     padding: 1rem;
     background-color: #ddd;
 }
 
 .layout-menu-right {
-    width: 200px; /* Pevná šírka pre druhý sidebar */
+    width: 200px;
+    /* Pevná šírka pre druhý sidebar */
     padding: 1rem;
     background-color: #dc5f5f;
 }
 
 .layout-main {
-    display: flex; /* Flexbox usporiadanie */
+    display: flex;
+    /* Flexbox usporiadanie */
     padding: 1rem;
-    flex-direction: row; /* Usporiadanie detí horizontálne (stĺpce vedľa seba) */
+    flex-direction: row;
+    /* Usporiadanie detí horizontálne (stĺpce vedľa seba) */
     min-height: 30vh;
-    gap: 1rem; /* Priestor medzi stĺpcami */
+    gap: 1rem;
+    /* Priestor medzi stĺpcami */
     overflow-y: auto;
+    width: 100%;
+    max-width: min(100%, var(--width)); /*vyplní šírku rodiča, ale max 1200px */
 }
 
 .layout-sidebar-first {
-    width: 200px; /* Pevná šírka pre prvý sidebar */
+    width: 200px;
+    /* Pevná šírka pre prvý sidebar */
     padding: 1rem;
     background-color: #ddd;
 }
 
 .layout-content {
-    flex: 1; /* Dynamická šírka na vyplnenie zvyšku priestoru */
+    flex: 1;
+    /* Dynamická šírka na vyplnenie zvyšku priestoru */
     padding: 1rem;
     background-color: #f4f4f4;
 }
 
 .layout-sidebar-second {
-    width: 200px; /* Pevná šírka pre druhý sidebar */
+    width: 200px;
+    /* Pevná šírka pre druhý sidebar */
     padding: 1rem;
     background-color: #dc5f5f;
 }
@@ -70,15 +90,7 @@
     text-align: center;
 }
 
-.layout-inline-icon {
-  display: inline-block;
-  width: 24px; /* Šírka ikony */
-  height: 24px; /* Výška ikony */
-  vertical-align: middle;  /* Zarovnanie ikony s textom */
-  background-color: transparent; /* Priehľadné pozadie */
-  background-size: cover; /* Prispôsobenie veľkosti ikony */
-  margin-right: 0.5rem; /* Medzera medzi ikonou a textom */
-}
+
 
 /* Responsive Layout */
 /* @media (max-width: 768px) {

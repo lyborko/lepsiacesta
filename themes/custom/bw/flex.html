@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>bw - Template</title>
+		<link
+		rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+																					<link rel="stylesheet" href="css/base/colors.css">
+																				<link rel="stylesheet" href="css/base/elements.css">
+																				<link rel="stylesheet" href="css/base/fonts.css">
+																				<link rel="stylesheet" href="css/base/variables.css">
+																				<link rel="stylesheet" href="css/layout/layout.css">  -->
+		<style>
+			.bw-theme {
+				/* --bw-global-color-primary: #6ec1e4; */
+				--bw-global-color-primary: #2a7465;
+				--bw-global-color-secondary: #ff981f;
+				--bw-global-color-text: #555555;
+				--bw-global-color-dark: #282826;
+				--bw-global-color-dark2: #24252c;
+				font-family: "Inter", Sans-serif;
+				/* display: flex;
+				width: 100%;
+				align-items: center;
+				flex-direction: column; */
+			}
+			.header-top {
+				display: flex;
+				flex-basis: auto;
+				flex-direction: column;
+				/* flex-grow: 2;
+    flex-shrink: 1; */
+				width: 100%;
+				flex-wrap: nowrap;
+				font-size: 1 rem;
+				height: 34px;
+				/* max-width: min(100%, var(--width)); 
+    max-width: 1500px;*/
+				background-color: var(--bw-global-color-primary);
+				justify-content: center;
+				align-items: center;
+				font-size: 14px;
+				color: #ffffff;
+			}
+			.layout-container {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				background-color: rgb(203, 163, 111);
+				width: 1200px;
+			}
+			.centered-content {
+				max-width: 1080px; /* maximálna šírka */
+				width: 100%; /* zaberie 100% šírky rodiča, ak je menší */
+				margin: 0 auto; /* centrovanie horizontálne */
+				box-sizing: border-box; /* aby paddingy nepresahovali šírku */
+				overflow: hidden; /* skryje pretečený obsah */
+			}
+			ul.respace {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				flex-wrap: nowrap; /* pridaj, aby sa li nescrollovalo */
+			}
+
+			@keyframes fly-in-left {
+				from {
+					transform: translateX(-100%);
+					opacity: 0;
+				}
+				to {
+					transform: translateX(0);
+					opacity: 1;
+				}
+			}
+
+			@keyframes fly-in-right {
+				from {
+					transform: translateX(100%);
+					opacity: 0;
+				}
+				to {
+					transform: translateX(0);
+					opacity: 1;
+				}
+			}
+
+			/* Prvý li */
+			ul.respace li:first-child {
+				animation: fly-in-left 0.8s ease-out forwards;
+				display: block;
+			}
+
+			/* Druhý li */
+			ul.respace li:last-child {
+				animation: fly-in-right 0.8s ease-out forwards;
+				animation-delay: 0.0s; /* môžeš dať aj 0s ak chceš naraz */
+			}
+
+			a.mail {
+				color: #ffffff; /* pôvodná farba */
+				text-decoration: none;
+				transition: color 0.3s ease; /* plynulá zmena farby */
+			}
+
+			/* po prejdení myšou */
+			a.mail:hover {
+				color: var(--bw-global-color-accent); /* cieľová ružová */
+			}
+			a.tel {
+				color: #ffffff; /* pôvodná farba */
+				text-decoration: none;
+				transition: color 0.3s ease; /* plynulá zmena farby */
+			}
+
+			/* po prejdení myšou */
+			a.tel:hover {
+				color: var(--bw-global-color-accent); /* cieľová ružová */
+			}
+
+			/* keď sa zúži pod 600px, prvý li zmizne */
+			@media(max-width: 600px) {
+				.centered-content ul.respace li:first-child {
+					display: none !important;
+				}
+			}
+
+		</style>
+	</head>
+	<body class="bw-theme">
+
+			<header class="header-top">
+				<div class="centered-content">
+					<ul class="respace">
+						<li>
+							<!-- <span class="layout-inline-icon" style="background-image: url('images/icons/svg/location-pin-dazz.svg');"></span> -->
+							<i class="fas fa-map-marker-alt" aria-hidden="true"></i>&nbsp;&nbsp;Kollárova 121/1, Pezinok 90201
+						</li>
+						<li>
+							<!-- <span class="layout-inline-icon" style="background-image: url('images/icons/svg/phone-dazz.svg');"></span> -->
+							<a class="tel" href="tel:+421 907 402 564" style="border-right: solid; border-width: thin; padding-right: 8px; margin-right: 8px; border-color: #ffffff;">
+								<i class="fas fa-phone-alt" aria-hidden="true"></i>&nbsp;&nbsp;(+421) 907 402 564</a>
+							<!-- <span class="layout-inline-icon" style="background-image: url('images/icons/svg/mail-dazz.svg');"></span> -->
+							<a class="mail" href="mailto:info@lepsiacesta.sk">
+								<i class="far fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;info@lepsiacesta.sk</a>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<div class="layout-container">
+				hello world
+			</div>
+	</body>
+</html>

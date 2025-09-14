@@ -6,7 +6,6 @@ global:
     base:
       css/base/elements.css: {}
       css/base/fonts.css: {}
-      css/base/general.css: {}
     component:
       css/component/block.css: {}
       css/component/breadcrumb.css: {}
@@ -22,5 +21,12 @@ global:
       css/component/buttons.css: {}
     layout:
       css/layout/layout.css: {}
+      css/layout/header.css: {}
+      css/layout/animations.css: {}
+      css/layout/general.css: {}
     theme:
-      css/theme/print.css: { media: print }   
+      css/theme/print.css: { media: print }    
+fontawesome:
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css: {}
