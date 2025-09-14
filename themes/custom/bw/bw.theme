@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 use Drupal\Core\Url;
 
+
 /**
  * @file
  * Functions to support theming in the bw theme.
@@ -31,12 +32,15 @@ function bw_preprocess_node(array &$variables): void {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for menu__account template.
+ * Implements hook_preprocess_HOOK() for account menu.
+ *
+ * @param array $variables
+ *   Preprocess variables.
  */
 function bw_preprocess_menu__account(&$variables) {
-    if ($variables['logged_in']) {
+  if ($variables['logged_in']) {
       $user = $variables['user'];
-      $variables['items']['user.page']['title'] = t('@name', ['@name' => $user->getDisplayName()]);
+      $variables['items']['user.page']['title'] =  t('@name', ['@name' => $user->getDisplayName()]);
       $variables['#cache']['contexts'][] = 'user';
       $variables['#cache']['tags'][] = 'user:' . $user->id();
     }
