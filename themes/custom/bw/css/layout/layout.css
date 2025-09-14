@@ -69,6 +69,16 @@
     text-align: center;
 }
 
+.layout-inline-icon {
+  display: inline-block;
+  width: 24px; /* Šírka ikony */
+  height: 24px; /* Výška ikony */
+  vertical-align: middle;  /* Zarovnanie ikony s textom */
+  background-color: transparent; /* Priehľadné pozadie */
+  background-size: cover; /* Prispôsobenie veľkosti ikony */
+  margin-right: 0.5rem; /* Medzera medzi ikonou a textom */
+}
+
 /* Responsive Layout */
 /* @media (max-width: 768px) {
     .layout-main {

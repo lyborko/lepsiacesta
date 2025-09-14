@@ -1,6 +1,7 @@
 <?php
-
 declare(strict_types=1);
+
+use Drupal\Core\Url;
 
 /**
  * @file
@@ -11,7 +12,8 @@ declare(strict_types=1);
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
 function bw_preprocess_html(array &$variables): void {
-
+    // Pridáme vlastnú triedu do <body>.
+    $variables['attributes']['class'][] = 'bw-theme';
 }
 
 /**
@@ -37,5 +39,34 @@ function bw_preprocess_menu__account(&$variables) {
       $variables['items']['user.page']['title'] = t('@name', ['@name' => $user->getDisplayName()]);
       $variables['#cache']['contexts'][] = 'user';
       $variables['#cache']['tags'][] = 'user:' . $user->id();
+    }
+  }
+
+
+  function bw_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    if ($form_id == 'user_login_form') {
+      $form['#theme'] = 'user_login_form';
+      $form['name']['#attributes']['placeholder'] = t('Enter your username');
+      $form['name']['#title_display'] = 'invisible';
+      $form['pass']['#attributes']['placeholder'] = t('Enter your password');
+      $form['pass']['#title_display'] = 'none';
+      // $form['forgot']['#plain_text'] = 'Forgot ';
+      $form['noaccount'] = [
+        '#type' => 'link',
+        '#title' => t('user name or password'),
+        '#url' => Url::fromUri('internal:/user/password'),
+      ];
+
+    }
+  //  echo $form;
+  }
+
+  function bw_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+    // Získanie ID formulára
+    $form_id = $variables['element']['#form_id'] ?? '';
+  
+    // Pridanie custom Twig šablóny pre login formulár
+    if ($form_id === 'user_login_form') {
+      $suggestions[] = 'form__user_login_form';
     }
   }

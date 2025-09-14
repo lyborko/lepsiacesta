@@ -1,6 +1,6 @@
 @REM call drush sql:dump --result-file=C:\xampp\htdocs\lepsiacesta\db_lepsiacesta.sql
 @REM mysqldump -u root lepsiacesta > db_lepsiacesta.sql
-mysqldump --host="localhost" --user="admin" --password="klingac" --databases lepsiacesta > "C:/xampp/htdocs/lepsiacesta/db_lepsiacesta.sql"
+mysqldump --host="localhost" --user="root" --password="" --databases lepsiacesta > "C:/xampp/htdocs/lepsiacesta/db_lepsiacesta.sql"
 ECHO =========================
 rar a C:\xampp\htdocs\lepsiacesta\db_lepsiacesta.rar C:\xampp\htdocs\lepsiacesta\db_lepsiacesta.sql
 ECHO ==========================

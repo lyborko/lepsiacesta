@@ -1,0 +1,19 @@
+{# {{ dump() }} #}
+<form{{ attributes }}>
+    {{ element.form_build_id }}  {# nutne #}
+    {{ element.form_id }}        {# nutne  inak sa formular nevie identifikovat#}
+    <table class="login-table">
+    <tr>
+      <td><strong>{{ 'Username'|t }}</strong></td>
+      <td>{{ element.name }}</td>
+    </tr>
+    <tr>
+      <td><strong>{{ 'Password'|t }}</strong></td>
+      <td>{{ element.pass }}</td>
+    </tr>
+    <tr>
+      <td>{{ element.actions }}</td>
+      <td>{{ 'Forgot '|t }}{{ element.noaccount }}</td>
+    </tr>
+  </table>
+</form>

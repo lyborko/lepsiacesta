@@ -19,6 +19,8 @@
 /node_modules/
 db-rar.bat
 db-unrar-install.bat
+desktop.ini
+Thumbs.db
 
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings*.php

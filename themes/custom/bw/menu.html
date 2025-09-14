@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>bw - Template</title>
+		<link
+		rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+																																																			<link rel="stylesheet" href="css/base/colors.css">
+																																																		<link rel="stylesheet" href="css/base/elements.css">
+																																																		<link rel="stylesheet" href="css/base/fonts.css">
+																																																		<link rel="stylesheet" href="css/base/variables.css">
+																																																		<link rel="stylesheet" href="css/layout/layout.css">  -->
+		<style>
+			.bw-theme {
+				--bw-global-color-primary: #6ec1e4;
+				--bw-global-color-secondary: #282826;
+				--bw-global-color-text: #555555;
+				--bw-global-color-accent: #ff981f;
+				--bw-global-color-1e622a1: #2a7465;
+				--bw-global-color-212fe2b: #24252c;
+				--bw-global-typography-primary-font-weight: 600;
+				--bw-global-typography-secondary-font-weight: 400;
+				--bw-global-typography-text-font-weight: 400;
+				--bw-global-typography-accent-font-weight: 600;
+				font-family: "Inter", Sans-serif;
+			}
+			.header-top {
+				display: flex;
+				flex-basis: auto;
+				flex-direction: column;
+				flex-grow: 0;
+				flex-shrink: 1;
+				flex-wrap: nowrap;
+				font-size: 1 rem;
+				height: 34px;
+				max-width: min(100%, var(--width));
+				background-color: var(--bw-global-color-1e622a1);
+				justify-content: center;
+				align-items: center;
+				font-size: 14px;
+				color: #ffffff;
+			}
+
+			.centered-content {
+				max-width: 1080px; /* maximálna šírka */
+				width: 100%; /* zaberie 100% šírky rodiča, ak je menší */
+				margin: 0 auto; /* centrovanie horizontálne */
+				box-sizing: border-box; /* aby paddingy nepresahovali šírku */
+				/* overflow: hidden; skryje pretečený obsah */
+			}
+
+
+			@keyframes fly-in-left {
+				from {
+					transform: translateX(-100%);
+					opacity: 0;
+				}
+				to {
+					transform: translateX(0);
+					opacity: 1;
+				}
+			}
+
+			@keyframes fly-in-right {
+				from {
+					transform: translateX(100%);
+					opacity: 0;
+				}
+				to {
+					transform: translateX(0);
+					opacity: 1;
+				}
+			}
+
+			/* a:focus,
+			label:focus {
+				outline: 2px solid var(--bw-global-color-1e622a1);
+				outline-offset: 2px;
+			} */
+
+			/* Základ menu */
+			.top-menu ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				background-color: #FFFFFF; /* farba menu */
+			}
+
+			.top-menu ul li {
+				position: relative; /* pre submenu */
+			}
+
+			.top-menu ul li a,
+			.top-menu ul li label {
+				display: block;
+				padding: 12px 20px;
+				color: var(--bw-global-color-secondary);
+				text-decoration: none;
+				transition: color 0.3s;
+			}
+
+			.top-menu ul li a:hover,
+			.top-menu ul li label:hover {
+				color: var(--bw-global-color-1e622a1);
+				transition: color 0.3s;
+			}
+
+			/* Submenu */
+			.top-menu ul li .submenu {
+				/*display: none; /* skryté štandardne */
+				position: absolute;
+				top: 110%; /* máličko pod rodičovský li */
+				left: 0;
+				background-color: #FFFFFF;
+				min-width: 180px;
+				z-index: 1000;
+				flex-direction: column;
+				box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.06);
+				border-radius: 5px;
+
+				/* Skrytie */
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(-20px); /* trošku vyššie */
+				transition: all 0.6s ease; /* animácia */
+			}
+
+			.top-menu ul li .submenu li a {
+				padding: 10px 15px;
+			}
+
+			.top-menu ul li .submenu li a:hover {
+				color: #FFFFFF;
+				background-color: var(--bw-global-color-1e622a1);
+				transition: color 0.4s ease;
+				transition: background-color 0.4s ease;
+			}
+			.top-menu ul li .submenu li:first-child a:hover {
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+			}
+
+			.top-menu ul li .submenu li:last-child a:hover {
+				border-bottom-left-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+			/* Zobrazenie submenu pri hover */
+			.top-menu ul li.has-submenu:hover .submenu {
+				/* display: flex; */
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0); /* vráti sa hore */
+			}
+			.top-menu input[type="checkbox"] {
+				display: none;
+			}
+
+			/* Hamburger ikonka */
+			.menu-toggle {
+				display: none;
+				font-size: 24px;
+				cursor: pointer;
+				color: var(--bw-global-color-secondary);
+			}
+
+			/* Responsívne: zmena na column pri malej šírke */
+			@media(max-width: 768px) {
+				/* .top-menu ul {
+					flex-direction: column;
+				} 
+
+				.top-menu ul li .submenu {
+					position: relative;
+					top: 0;
+					left: 0;
+				}*/
+				.menu-toggle {
+					position: relative;
+					width: 24px;
+					height: 24px;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+				}
+
+				/* ikony na seba */
+				.menu-toggle span {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					transition: opacity 0.4s ease, transform 0.4s ease;
+				}
+				.menu-toggle-hamburger {
+					opacity: 1;
+					transform: rotate(0deg) scale(1);
+				}
+
+				.menu-toggle-cross {
+					opacity: 0;
+					transform: rotate(-90deg) scale(0.8);
+				}
+
+				#menu-toggle:checked ~ .menu-toggle .menu-toggle-hamburger {
+					opacity: 0;
+					transform: rotate(90deg) scale(0.8);
+				}
+				#menu-toggle:checked ~ .menu-toggle .menu-toggle-cross {
+					opacity: 1;
+					transform: rotate(0deg) scale(1);
+				}
+
+				.top-menu ul {
+					display: none;
+					flex-direction: column;
+					background: #fff;
+					position: absolute;
+					top: 60px;
+					left: 0;
+					/* right: 0; */
+					width: auto;
+					box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+				}
+
+				.top-menu ul li .submenu {
+					position: relative; /* už nie absolute → bude súčasťou flow */
+					top: 0;
+					left: 0;
+					opacity: 1;
+					visibility: visible;
+					transform: none;
+					display: none; /* skryté, kým nie je otvorené */
+					border-radius: 0;
+				}
+
+				.top-menu ul li .submenu li:first-child a:hover,
+				.top-menu ul li .submenu li:last-child a:hover {
+					border-radius: 0;
+				}
+
+
+				/* .top-menu ul li.has-submenu.open .submenu {
+					display: block;
+				} */
+
+				/* Zobraziť menu keď je checkbox zapnutý */
+				#menu-toggle:checked ~ ul {
+					display: block; /* zobraziť menu */
+				}
+
+				/* Submenu */
+				.top-menu .has-submenu ul.submenu {
+					max-height: 0; /* začína zmenšené */
+					opacity: 0;
+					overflow: hidden;
+					transition: max-height 0.4s ease, opacity 0.4s ease;
+					/* display: none; */
+					display: block;  
+					flex-direction: column;
+					background: #f9f9f9;
+					padding-left: 30px;
+				}
+
+				.top-menu .has-submenu label {
+					display: block;
+					padding: 12 20px;
+					cursor: pointer;
+				}
+
+				/* Zobraziť submenu ak je zapnutý jeho checkbox */
+				.has-submenu input[type="checkbox"]:checked + label + ul.submenu {
+					/* display: flex; */
+					/*zmeniť na block, aby sa dal nastaviť max-height */
+					max-height: 120px; /* alebo nejaká dostatočná hodnota, pozor, toto zahrnuje i prazdny priestor, takze
+					ak by bola hodnota 10000 tak čakas, kym ju zroluje celu*/
+					opacity: 1;
+				}
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bw-theme">
+			<header class="header-top">
+				<div class="centered-content">
+					<nav class="top-menu">
+						<input type="checkbox" id="menu-toggle"/>
+						<label
+							for="menu-toggle" class="menu-toggle">
+							<!--	<i class="fas fa-bars"></i>-->
+							<span class="menu-toggle-hamburger">
+								<i class="fas fa-bars"></i>
+							</span>
+							<span class="menu-toggle-cross">
+								<i class="fas fa-times"></i>
+							</span>
+						</label>
+						<ul>
+							<li>
+								<a href="#">Domov</a>
+							</li>
+							<li class="has-submenu">
+								<input type="checkbox" id="submenu-toggle-1">
+								<label for="submenu-toggle-1">O nás
+									<i class="fas fa-caret-down"></i>
+								</label>
+								<ul class="submenu">
+									<li>
+										<a href="#">História</a>
+									</li>
+									<li>
+										<a href="#">Tím</a>
+									</li>
+									<li>
+										<a href="#">Kontakt</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Služby</a>
+							</li>
+							<li class="has-submenu">
+								<input type="checkbox" id="submenu-toggle-2">
+								<label for="submenu-toggle-2">Blog
+									<i class="fas fa-caret-down"></i>
+								</label>
+								<ul class="submenu">
+									<li>
+										<a href="#">Novinky</a>
+									</li>
+									<li>
+										<a href="#">Tipy</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Kontakt</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+		</div>
+	</body>
+</html>
