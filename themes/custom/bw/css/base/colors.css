@@ -1,0 +1,19 @@
+.primary-color{
+color: var(--bw-global-color-primary);
+}
+
+.secondary-color{
+color: var(--bw-global-color-secondary);
+}
+
+.text-color{
+color: var(--bw-global-color-text);
+}
+
+.dark-color{
+color: var(--bw-global-color-dark);
+}
+
+.dark2-color{
+color: var(--bw-global-color-dark2);
+}

@@ -1,0 +1,23 @@
+.flexblock{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 600px;
+    max-width: min(100%, var(--width));
+    /* Usporiadanie detí horizontálne (stĺpce vedľa seba) */
+    gap: 1rem;
+    /* Priestor medzi stĺpcami */
+}
+
+.primary-color-overlay{
+    /* background-image: radial-gradient(at center center, var(--bw-global-color-primary) 0%, #F2295B00 80%); */
+    background-color: transparent;
+    opacity: 0.1;
+    background-image: radial-gradient(at center center, var(--bw-global-color-primary-alpha) 0%, #F2295B00 80%);
+}
+
+.secondary-color-overlay{
+    background-color: transparent;
+    opacity: 0.1;
+    background-image: radial-gradient(at center center, var(--bw-global-color-secondary-alpha ) 0%, #F2295B00 80%);
+}

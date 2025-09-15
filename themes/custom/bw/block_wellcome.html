@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>bw - Template</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+															<link rel="stylesheet" href="css/base/colors.css">
+														<link rel="stylesheet" href="css/base/elements.css">
+														<link rel="stylesheet" href="css/base/fonts.css">
+														<link rel="stylesheet" href="css/base/variables.css">
+														<link rel="stylesheet" href="css/layout/layout.css">  -->
+	<style>
+		@font-face {
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 400;
+			src: url('fonts/Inter-Regular.woff2') format('woff2');
+		}
+
+		/* @font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Inter-Bold.woff2') format('woff2');
+} */
+
+		@font-face {
+			font-family: 'Inter';
+			font-style: italic;
+			font-weight: 400;
+			src: url('fonts/Inter-Italic.woff2') format('woff2');
+		}
+
+		.bw-theme {
+			/* --bw-global-color-primary: #6ec1e4; */
+			--bw-global-color-primary: rgb(42, 116, 101);
+			--bw-global-color-primary-alpha: rgb(42, 116, 101, 0.1);
+			--bw-global-color-secondary: #ff981f;
+			--bw-global-color-secondary-alpha: rgba(255, 152, 31, 0.1);
+			--bw-global-color-text: #555555;
+			--bw-global-color-dark: #282826;
+			--bw-global-color-dark2: #24252c;
+			--width: 1200px;
+			font-family: "Inter", Sans-serif;
+			/* display: flex;
+  width: 100%;
+  align-items: center;   
+  flex-direction: column; */
+		}
+
+		.primary-color {
+			color: var(--bw-global-color-primary);
+		}
+
+		.secondary-color {
+			color: var(--bw-global-color-secondary);
+		}
+
+		.text-color {
+			color: var(--bw-global-color-text);
+		}
+
+		.dark-color {
+			color: var(--bw-global-color-dark);
+		}
+
+		.dark2-color {
+			color: var(--bw-global-color-dark2);
+		}
+
+		.white-color {
+			color: #FFFFFF;
+		}
+
+
+		.flexblock {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			height: 600px;
+			max-width: min(100%, var(--width));
+			/* Usporiadanie detí horizontálne (stĺpce vedľa seba) */
+			gap: 1rem;
+			/* Priestor medzi stĺpcami */
+		}
+
+		.primary-color-overlay {
+			/* background-image: radial-gradient(at center center, var(--bw-global-color-primary) 0%, #F2295B00 80%); */
+			background-color: transparent;
+			background-image: radial-gradient(at center center,
+					var(--bw-global-color-primary-alpha) 0%,
+					#f2295b00 80%);
+		}
+
+		.secondary-color-overlay {
+			background-color: transparent;
+			background-image: radial-gradient(at center center,
+					var(--bw-global-color-secondary-alpha) 0%,
+					#f2295b00 80%);
+		}
+
+		a.button {
+			height: 50px;
+			background-color: var(--bw-global-color-secondary);
+			border-radius: 50px;
+			text-decoration: none;
+			padding: 14px 25px;
+			transition: all 0.3s ease;
+			font-family: "Inter", Sans-serif;
+		}
+
+		a.button:hover {
+			background-color: var(--bw-global-color-primary);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="bw-theme">
+		<div class="flexblock secondary-color-overlay">
+			<div>
+				<h3 class="primary-color"><i class="far fa-dot-circle"></i> RECOVER YOURSELF</h3>
+				<h1>Nájdite dnes cestu k uzdraveniu</h1>
+				<p>Tvoja cesta k triezvosti začína tu. Empatická starostlivosť, individuálne liečebné programy and
+					neustála podpora.</p>
+				<a class="button white-color" href="#">ZAČNI HNEĎ</a>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>
