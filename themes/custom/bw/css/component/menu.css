@@ -142,7 +142,7 @@
   display: none;
   font-size: 24px;
   cursor: pointer;
-  color: var(--bw-global-color-secondary);
+  color: var(--bw-global-color-dark);
 }
 
 .submenu-toggle {
@@ -225,6 +225,7 @@
     /* right: 0; */
     width: auto;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    z-index: 500;
   }
 
   .primary-menu ul li .submenu {
@@ -243,7 +244,7 @@
     border-radius: 0;
   }
 
-  /* .primary-menu ul li.has-submenu.open .submenu {
+  /* .primary-menu ul li.menu-item-caption.open .submenu {
 					display: block;
 				} */
 
@@ -265,14 +266,15 @@
     padding-left: 30px;
   }
 
-  .primary-menu .has-submenu label {
-    display: block;
-    padding: 12 20px;
+  .primary-menu .menu-item-caption label {
+    display: inline-block;
+    padding: 20 0px;
     cursor: pointer;
   }
 
   /* Zobraziť submenu ak je zapnutý jeho checkbox */
-  .has-submenu input[type="checkbox"]:checked + label + ul.submenu {
+  /* .menu-item-caption input[type="checkbox"]:checked + label + ul.submenu { */
+  .has-submenu input[type="checkbox"]:checked ~ .submenu {
     /* display: flex; */
     /*zmeniť na block, aby sa dal nastaviť max-height */
     max-height: 120px; /* alebo nejaká dostatočná hodnota, pozor, toto zahrnuje i prazdny priestor, takze
