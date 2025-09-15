@@ -1,0 +1,26 @@
+:root {
+  --brown1: #fff2d7;
+  --brown2: #e8c889;
+  --brown3: #aa8439;
+  --brown4: #6c4a08;
+  --brown5: #2d1e00;
+  --green1: #cde9c5;
+  --green2: #84c473;
+  --green3: #448f30;
+  --green4: #185b07;
+  --green5: #082600;
+  --font-family-metropolis: "metropolis", sans-serif;
+  --inkaGreen: #355e3b;
+  --inkaBG: #f8f5f0;
+  --inkaCapucino: #c9a47c;
+
+  --primary-bg: #fdfcfb;
+  --primary-text: #2c2c2c;
+  --accent: #3a86ff;
+  --accent-hover: #265dab;
+  --soft-contrast: #e8e8e8;
+  --highlight: #ffb703;
+  --muted: #a0a0a0;
+  --error: #d62828;
+  --success: #70a37f;
+}
