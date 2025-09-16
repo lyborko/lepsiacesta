@@ -115,6 +115,27 @@
 		a.button:hover {
 			background-color: var(--bw-global-color-primary);
 		}
+
+		.masked {
+			width: 600px;
+			height: 600px;
+
+			/* maska */
+			-webkit-mask-image: url('images/pictures/shap-2.png');
+			/* pre Safari/Chrome */
+			-webkit-mask-repeat: no-repeat;
+			-webkit-mask-size: cover;
+
+			mask-image: url('images/pictures/shap-2.png');
+			/* štandard */
+			mask-repeat: no-repeat;
+			mask-size: cover;
+
+			/* voliteľne: ak chceš farbu pozadia cez masku */
+			background-color: #ff981f;
+
+			display: inline-block;
+		}
 	</style>
 </head>
 
@@ -123,10 +144,16 @@
 		<div class="flexblock secondary-color-overlay">
 			<div>
 				<h3 class="primary-color"><i class="far fa-dot-circle"></i> RECOVER YOURSELF</h3>
-				<h1>Nájdite dnes cestu k uzdraveniu</h1>
+				<h1>Nájdite cestu k uzdraveniu už dnes</h1>
 				<p>Tvoja cesta k triezvosti začína tu. Empatická starostlivosť, individuálne liečebné programy and
 					neustála podpora.</p>
-				<a class="button white-color" href="#">ZAČNI HNEĎ</a>
+				<a class="button white-color" href="#"><b>ZAČNI HNEĎ</b></a>
+				<div class="masked">
+					<picture>
+						<source srcset="images/pictures/above-view-of-several-attendants-of-support-group.webp" type="image/webp">
+						<img src="images/pictures/above-view-of-several-attendants-of-support-group.webp" alt="Example">
+					</picture>
+				</div>
 			</div>
 
 		</div>
