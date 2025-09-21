@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+<pre>
+  {{ dump(attributes) }}
+</pre>
+<br>
+<br>
+<pre>
+  {{ dump(element) }}
+</pre>
+
+
+<form{{ attributes }}>
+<h2>{{ 'Kontaktujte nás'|t }}</h2>
+
+<div>
+  {{ 'Dajte nám vedieť, ako Vám môžeme pomôcť. Vyplňte tento formulár a člen nášho tímu Vás bude zakrátko kontaktovať.'|t }}
+</div>
+
+  {{ children }}
+</form>

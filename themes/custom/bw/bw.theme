@@ -1,8 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
 use Drupal\Core\Url;
-
 
 /**
  * @file
@@ -12,24 +12,21 @@ use Drupal\Core\Url;
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
-function bw_preprocess_html(array &$variables): void {
-    // Pridáme vlastnú triedu do <body>.
-    $variables['attributes']['class'][] = 'bw-theme';
+function bw_preprocess_html(array &$variables): void
+{
+  // Pridáme vlastnú triedu do <body>.
+  $variables['attributes']['class'][] = 'bw-theme';
 }
 
 /**
  * Implements hook_preprocess_HOOK() for page.html.twig.
  */
-function bw_preprocess_page(array &$variables): void {
-
-}
+function bw_preprocess_page(array &$variables): void {}
 
 /**
  * Implements hook_preprocess_HOOK() for node.html.twig.
  */
-function bw_preprocess_node(array &$variables): void {
-
-}
+function bw_preprocess_node(array &$variables): void {}
 
 /**
  * Implements hook_preprocess_HOOK() for account menu.
@@ -37,40 +34,137 @@ function bw_preprocess_node(array &$variables): void {
  * @param array $variables
  *   Preprocess variables.
  */
-function bw_preprocess_menu__account(&$variables) {
+function bw_preprocess_menu__account(&$variables)
+{
   if ($variables['logged_in']) {
-      $user = $variables['user'];
-      $variables['items']['user.page']['title'] =  t('@name', ['@name' => $user->getDisplayName()]);
-      $variables['#cache']['contexts'][] = 'user';
-      $variables['#cache']['tags'][] = 'user:' . $user->id();
-    }
+    $user = $variables['user'];
+    $variables['items']['user.page']['title'] =  t('@name', ['@name' => $user->getDisplayName()]);
+    $variables['#cache']['contexts'][] = 'user';
+    $variables['#cache']['tags'][] = 'user:' . $user->id();
+  }
+}
+
+
+function bw_preprocess_form(&$variables)
+{
+  //toto spustí pre kazdy form
+}
+
+
+function bw_form_form__inquiry_contact_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  $form['attributes']['class'][] = 'inquiryform';
+}
+
+function bw_preprocess_form__inquiry_contact_form(&$variables)
+{
+  $variables['attributes']['class'][] = 'inquiryform';
+  $variables['element']['subject']['#attributes']['class'][] = 'container-height';
+
+  // <div class="checkbox-wrapper-65">
+  //   <label for="cbk1-65">
+  //     <input type="checkbox" id="cbk1-65">
+  //     <span class="cbx">
+  //       <svg width="12px" height="11px" viewBox="0 0 12 11">
+  //         <polyline points="1 6.29411765 4.5 10 11 1"></polyline>
+  //       </svg>
+  //     </span>
+  //     <span>Checkbox</span>
+  //   </label>
+  // </div>
+  $copy = &$variables['element']['copy'];
+  $copy = [
+    '#type' => 'checkbox',           // Drupal checkbox type
+    //  '#title' => t('Checkbox'),       // Text vedľa checkboxu
+    //  '#title_display' => 'after',     // Title sa zobrazí za checkboxom
+    '#attributes' => [
+      'id' => 'cbk1-65',
+      'class' => ['custom-checkbox'], // prídaj vlastnú triedu, ak chceš
+    ],
+    '#prefix' => '<div class="checkbox-wrapper-65">',  // wrapper div pred checkboxom
+    '#suffix' => '</div>',                              // wrapper div po checkboxe
+    // Ak chceš vložiť SVG ako vlastný element:
+    '#children_prefix' => '<span class="cbx"><svg width="12px" height="11px" viewBox="0 0 12 11"><polyline points="1 6.29411765 4.5 10 11 1"></polyline></svg></span>',
+  ];
+
+  //  $variables['copy']['class'][] = 'checkbox-wrapper-65';
+  if ($variables['logged_in']) {
+  }
+  // toto spusti po bw_preprocess_form(&$variables)
+  // ale názov "form__inquiry_contact_form" musí byť uvedený v 
+  // function bw_theme_suggestions_form_alter(array &$suggestions, array $variables)
+  // viď nižšie
+}
+
+function bw_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  if ($form_id == 'user_login_form') {
+    $form['#theme'] = 'user_login_form';
+    $form['name']['#attributes']['placeholder'] = t('Enter your username');
+    $form['name']['#title_display'] = 'invisible';
+    $form['pass']['#attributes']['placeholder'] = t('Enter your password');
+    $form['pass']['#title_display'] = 'none';
+    // $form['forgot']['#plain_text'] = 'Forgot ';
+    $form['noaccount'] = [
+      '#type' => 'link',
+      '#title' => t('user name or password'),
+      '#url' => Url::fromUri('internal:/user/password'),
+    ];
   }
 
-
-  function bw_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-    if ($form_id == 'user_login_form') {
-      $form['#theme'] = 'user_login_form';
-      $form['name']['#attributes']['placeholder'] = t('Enter your username');
-      $form['name']['#title_display'] = 'invisible';
-      $form['pass']['#attributes']['placeholder'] = t('Enter your password');
-      $form['pass']['#title_display'] = 'none';
-      // $form['forgot']['#plain_text'] = 'Forgot ';
-      $form['noaccount'] = [
-        '#type' => 'link',
-        '#title' => t('user name or password'),
-        '#url' => Url::fromUri('internal:/user/password'),
-      ];
-
-    }
+  if ($form_id === 'contact_message_inquiry_contact_form_form') {
+    $form['subject']['#attributes']['class'][] = 'container-height';
+    $form['copy']['#prefix'] = '<div class="checkbox-wrapper-65">';
+    $form['copy']['#suffix'] = '</div>';
+    // $form['copy'] = [
+    //   // '#type' => 'checkbox',
+    //   // '#title' => t('Checkbox'),
+    //   // '#title_display' => 'after',
+    //   // '#attributes' => [
+    //   //   'id' => 'cbk1-65',
+    //   //   'class' => ['custom-checkbox'],
+    //   // ],
+    //   '#prefix' => '<div class="checkbox-wrapper-65">',
+    //   '#suffix' => '</div>',
+    // ];
+  }
   //  echo $form;
+}
+
+function bw_theme_suggestions_form_alter(array &$suggestions, array $variables)
+{
+  // Získanie ID formulára
+  $form_id = $variables['element']['#form_id'] ?? '';
+
+  // Pridanie custom Twig šablóny pre login formulár
+  if ($form_id === 'user_login_form') {
+    $suggestions[] = 'form__user_login_form';
   }
 
-  function bw_theme_suggestions_form_alter(array &$suggestions, array $variables) {
-    // Získanie ID formulára
-    $form_id = $variables['element']['#form_id'] ?? '';
-  
-    // Pridanie custom Twig šablóny pre login formulár
-    if ($form_id === 'user_login_form') {
-      $suggestions[] = 'form__user_login_form';
-    }
+  if ($form_id === 'contact_message_inquiry_contact_form_form') {
+    // Pridáme vlastnú šablónu
+    $suggestions[] = 'form__inquiry_contact_form';
   }
+}
+
+function bw_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
+  $element = $variables['element'];
+  $form_id = $element['#form_id'] ?? '';
+
+  if ($form_id === 'contact_message_inquiry_contact_form_form') {
+    $suggestions[] = 'form_element__inquiry_contact_form';
+  }
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+// function bw_theme($existing, $type, $theme, $path) {
+//   return [
+//     'FORM_ID_THEME' => [
+//       'template' => 'custom-form-template-name',
+//       'render element' => 'form',
+//     ]
+//   ];
+// }

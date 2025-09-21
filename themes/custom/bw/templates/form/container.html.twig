@@ -25,4 +25,14 @@
     has_parent ? 'form-wrapper',
   ]
 %}
-<div{{ attributes.addClass(classes) }}>{{ children }}</div>
+
+{# Pridáme 'container-height', ak existuje children #}
+{# {% if children %}
+	{%
+    set classes = classes|merge(['container-padding'])
+  %}
+{% endif %} #}
+
+<div{{attributes.addClass(classes)}}>
+	{{ children }}
+</div>
