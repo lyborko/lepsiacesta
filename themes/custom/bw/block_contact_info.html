@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>bw - Template</title>
+		<link
+		rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+																																							<link rel="stylesheet" href="css/base/colors.css">
+																																						<link rel="stylesheet" href="css/base/elements.css">
+																																						<link rel="stylesheet" href="css/base/fonts.css">
+																																						<link rel="stylesheet" href="css/base/variables.css">
+																																						<link rel="stylesheet" href="css/layout/layout.css">  -->
+		<style>
+			@font-face {
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 400;
+				src: url('fonts/Inter-Regular.woff2') format('woff2');
+			}
+
+			/* @font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Inter-Bold.woff2') format('woff2');
+} */
+
+			@font-face {
+				font-family: 'Inter';
+				font-style: italic;
+				font-weight: 400;
+				src: url('fonts/Inter-Italic.woff2') format('woff2');
+			}
+
+			.bw-theme {
+				/* --bw-global-color-primary: #6ec1e4; */
+				--bw-global-color-primary: rgb(42, 116, 101);
+				--bw-global-color-primary-alpha: rgb(42, 116, 101, 0.1);
+				--bw-global-color-secondary: #ff981f;
+				--bw-global-color-secondary-alpha: rgba(255, 152, 31, 0.1);
+				--bw-global-color-text: #555555;
+				--bw-global-color-dark: #282826;
+				--bw-global-color-dark2: #24252c;
+				--bw-global-color-background: #FFFFFFFF;
+				--width: 1200px;
+				font-family: "Inter", Sans-serif;
+				/* display: flex;
+  width: 100%;
+  align-items: center;   
+  flex-direction: column; */
+			}
+
+			.primary-color {
+				color: var(--bw-global-color-primary);
+			}
+
+			.secondary-color {
+				color: var(--bw-global-color-secondary);
+			}
+
+			.text-color {
+				color: var(--bw-global-color-text);
+			}
+
+			.dark-color {
+				color: var(--bw-global-color-dark);
+			}
+
+			.dark2-color {
+				color: var(--bw-global-color-dark2);
+			}
+
+			.white-color {
+				color: #FFFFFF;
+			}
+
+
+			.flexblock {
+				display: flex;
+				flex-direction: row;
+				width: 100%;
+				height: 600px;
+				max-width: min(100%, var(--width));
+				/* Usporiadanie detí horizontálne (stĺpce vedľa seba) */
+				gap: 1rem;
+				/* Priestor medzi stĺpcami */
+			}
+
+			.primary-color-overlay {
+				/* background-image: radial-gradient(at center center, var(--bw-global-color-primary) 0%, #F2295B00 80%); */
+				background-color: transparent;
+				background-image: radial-gradient(at center center, var(--bw-global-color-primary-alpha) 0%, #f2295b00 80%);
+			}
+
+			.secondary-color-overlay {
+				background-color: transparent;
+				background-image: radial-gradient(at center center, var(--bw-global-color-secondary-alpha) 0%, #f2295b00 80%);
+			}
+
+			a.button {
+				height: 50px;
+				background-color: var(--bw-global-color-secondary);
+				border-radius: 50px;
+				text-decoration: none;
+				padding: 14px 25px;
+				transition: all 0.3s ease;
+				font-family: "Inter", Sans-serif;
+			}
+
+			a.button:hover {
+				background-color: var(--bw-global-color-primary);
+			}
+
+			.no-margin {
+				margin: 0;
+			}
+
+			.contact-icon {
+				display: flex;
+				width: 50px;
+				height: 50px;
+				font-size: 25px;
+				background-color: var(--bw-global-color-secondary);
+				padding: 10px;
+				border-radius: 50%;
+				color: var(--bw-global-color-background);
+				justify-content: center;
+				align-items: center;
+			}
+			.contact-wrapper-row {
+				display: flex;
+				flex-direction: row;
+				gap: 20px;
+				padding-bottom: 10px;
+				padding-top: 10px;
+			}
+			.contact-wrapper-column {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+
+			.map-container {
+				position: relative;
+				width: 450px;
+				height: 250px;
+				/* border: 3px solid var(--green5); */
+				border-radius: 15px;
+			}
+
+			.map-container iframe {
+				width: 100%;
+				height: 100%;
+				/* border: 3px solid var(--green5); */
+				border-radius: 15px;
+				display: block;
+				filter: grayscale(100%);
+				transition: filter 0.5s ease;
+			}
+
+			.map-container iframe:hover {
+				filter: grayscale(0%);
+			}
+
+			.transparent-brown {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				/* border: 3px solid var(--green5); */
+				border-radius: 15px;
+				/*background-color: rgba(232, 200, 137, 0.3);  hnedy polopriehľadný overlay 108, 74, 8*/
+				/* background-color: rgba(200, 200, 200, 0.3); hnedy polopriehľadný overlay 108, 74, 8*/
+				pointer-events: none; /* Umožní interakciu s mapou pod overlayom */
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="bw-theme">
+			<div class="flexblock secondary-color-overlay">
+				<div>
+					<h1>Tvoja cesta k uzdraveniu začína rozhovorom</h1>
+					<p>My, v Lepšej ceste rozumieme, že požiadanie o pomoc je veľký krok. Či hľadáte pomoc pre seba alebo pre svojich blízkych náš tím je pripravený zodpovedať Vaše otázky, sprevádzať a pomáhať pri prvých krokoch smerom k uzdraveniu.
+					</p>
+
+
+					<div class="contact-wrapper-row">
+						<div class="contact-icon">
+
+							<i class="fas fa-phone-alt" aria-hidden="true"></i>
+
+						</div>
+						<div class="contact-wrapper-column">
+							<h3 class="no-margin">Volajte</h3>
+							<p class="no-margin">
+								<a href="tel:+421 907 402 564">0907 402 564</a>
+							</p>
+						</div>
+					</div>
+
+					<div class="contact-wrapper-row">
+						<div class="contact-icon">
+							<span>
+								<i class="far fa-envelope" aria-hidden="true"></i>
+							</span>
+						</div>
+						<div class="contact-wrapper-column">
+							<h3 class="no-margin">Píšte</h3>
+							<p class="no-margin">
+								<a href="mailto:info@lepsiacesta.sk">info@lepsiacesta.sk</a>
+							</p>
+						</div>
+					</div>
+
+					<div class="contact-wrapper-row">
+						<div class="contact-icon">
+							<span>
+								<i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+							</span>
+						</div>
+						<div class="contact-wrapper-column">
+							<h3 class="no-margin">Adresa</h3>
+							<p class="no-margin">
+								Kollárova 121/1, Pezinok 90201
+							</p>
+							<p class="no-margin">
+								IČO: 45734356 :: DIČ: 2023174945
+							</p>
+						</div>
+
+					</div>
+					<div class="map-container">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2654.936138762117!2d17.268519177450997!3d48.28484444089578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c90b883e844c9%3A0xefa40b8ca455e5d3!2sLep%C5%A1ia%20cesta%2C%20n.o.%20-%20Centrum%20pomoci!5e0!3m2!1sen!2ssk!4v1739996569533!5m2!1sen!2ssk" width="450px" height="150px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<!--	<div class="transparent-brown"></div> -->
+					</div>
+					<div class="contact-wrapper-row">
+						<div class="contact-icon">
+							<span>
+								<i class="fas fa-euro-sign"></i>
+							</span>
+						</div>
+						<div class="contact-wrapper-column">
+							<h3 class="no-margin">Účet</h3>
+							<p class="no-margin">
+								IBAN: SK97 8330 0000 0029 0099 9269
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+
+</html>
