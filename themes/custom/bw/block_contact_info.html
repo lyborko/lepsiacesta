@@ -43,6 +43,7 @@
 				--bw-global-color-secondary-alpha: rgba(255, 152, 31, 0.1);
 				--bw-global-color-text: #555555;
 				--bw-global-color-dark: #282826;
+				--bw-global-color-dark-alpha: #F8F9FE;
 				--bw-global-color-dark2: #24252c;
 				--bw-global-color-background: #FFFFFFFF;
 				--width: 1200px;
@@ -89,46 +90,59 @@
 				/* Priestor medzi stĺpcami */
 			}
 
-			.primary-color-overlay {
-				/* background-image: radial-gradient(at center center, var(--bw-global-color-primary) 0%, #F2295B00 80%); */
-				background-color: transparent;
-				background-image: radial-gradient(at center center, var(--bw-global-color-primary-alpha) 0%, #f2295b00 80%);
-			}
-
-			.secondary-color-overlay {
-				background-color: transparent;
-				background-image: radial-gradient(at center center, var(--bw-global-color-secondary-alpha) 0%, #f2295b00 80%);
-			}
-
-			a.button {
+			.waveblock {
+				/* position: absolute; */
+				top: 0;
+				left: 0;
+				width: 100%;
 				height: 50px;
-				background-color: var(--bw-global-color-secondary);
-				border-radius: 50px;
+				max-width: min(100%, var(--width));
+				background: url('images/pictures/topshape-silver.svg') no-repeat center center;
+				
+				background-size: cover;
+				gap: 1rem;
+				z-index: -1;
+				transform: rotate3d(1, 0, 0, 180deg);
+			}
+
+			.dark-color-overlay {
+				background-color: transparent;
+				background-image: linear-gradient(var(--bw-global-color-dark-alpha), var(--bw-global-color-background));
+			}
+
+			.contact-a {
+				color: var(--bw-global-color-text);
 				text-decoration: none;
-				padding: 14px 25px;
 				transition: all 0.3s ease;
 				font-family: "Inter", Sans-serif;
 			}
 
-			a.button:hover {
-				background-color: var(--bw-global-color-primary);
+			.contact-a:hover {
+				color: var(--bw-global-color-secondary);
 			}
 
 			.no-margin {
 				margin: 0;
 			}
+			.area {
+				/* max-width: min(45%, var(--width)); */
+				width: 45%;
+				margin: 10px;
+			}
 
 			.contact-icon {
 				display: flex;
+				aspect-ratio: 1 / 1; /*dolezite, lebo pri resize to deformuje kruh*/
 				width: 50px;
 				height: 50px;
 				font-size: 25px;
 				background-color: var(--bw-global-color-secondary);
-				padding: 10px;
+				/* padding: 10px; */
 				border-radius: 50%;
 				color: var(--bw-global-color-background);
 				justify-content: center;
 				align-items: center;
+				box-sizing:border-box;
 			}
 			.contact-wrapper-row {
 				display: flex;
@@ -183,8 +197,11 @@
 
 	<body>
 		<div class="bw-theme">
-			<div class="flexblock secondary-color-overlay">
-				<div>
+			<div class="waveblock">
+
+			</div>
+			<div class="flexblock dark-color-overlay">
+				<div class="area">
 					<h1>Tvoja cesta k uzdraveniu začína rozhovorom</h1>
 					<p>My, v Lepšej ceste rozumieme, že požiadanie o pomoc je veľký krok. Či hľadáte pomoc pre seba alebo pre svojich blízkych náš tím je pripravený zodpovedať Vaše otázky, sprevádzať a pomáhať pri prvých krokoch smerom k uzdraveniu.
 					</p>
@@ -198,8 +215,8 @@
 						</div>
 						<div class="contact-wrapper-column">
 							<h3 class="no-margin">Volajte</h3>
-							<p class="no-margin">
-								<a href="tel:+421 907 402 564">0907 402 564</a>
+							<p class="no-margin text-color">
+								<a class="contact-a" href="tel:+421 907 402 564">0907 402 564</a>
 							</p>
 						</div>
 					</div>
@@ -213,7 +230,7 @@
 						<div class="contact-wrapper-column">
 							<h3 class="no-margin">Píšte</h3>
 							<p class="no-margin">
-								<a href="mailto:info@lepsiacesta.sk">info@lepsiacesta.sk</a>
+								<a class="contact-a" href="mailto:info@lepsiacesta.sk">info@lepsiacesta.sk</a>
 							</p>
 						</div>
 					</div>
@@ -226,10 +243,10 @@
 						</div>
 						<div class="contact-wrapper-column">
 							<h3 class="no-margin">Adresa</h3>
-							<p class="no-margin">
+							<p class="no-margin text-color">
 								Kollárova 121/1, Pezinok 90201
 							</p>
-							<p class="no-margin">
+							<p class="no-margin text-color">
 								IČO: 45734356 :: DIČ: 2023174945
 							</p>
 						</div>
@@ -247,7 +264,7 @@
 						</div>
 						<div class="contact-wrapper-column">
 							<h3 class="no-margin">Účet</h3>
-							<p class="no-margin">
+							<p class="no-margin text-color">
 								IBAN: SK97 8330 0000 0029 0099 9269
 							</p>
 						</div>
