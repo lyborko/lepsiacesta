@@ -1,0 +1,54 @@
+.block-personal-tile-content {
+  background-color: #f8f9fe;
+  /* border: 1px solid #ddd; */
+  border: none;
+  border-radius: 8px;
+  padding-bottom: 1px; /* pridanie paddingu dole */
+  text-align: left;
+  width: 272px;
+  transition: box-shadow 0.3s ease;
+}
+
+.block-personal-tile-content:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.block-personal-tile-image-wrapper {
+  width: 100%;          /* veľkosť avatara */
+  height: auto;
+  /* margin: 0 auto 12px; */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: hidden;      /* aby sa obrázok nevystrčil mimo kruhu */
+  /* transition: transform 6.3s ease; pre hladký efekt */
+}
+
+.block-personal-tile-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.3s ease; /* pre zoom efekt */
+}
+
+.block-personal-tile-image-wrapper:hover img {
+  transform: scale(1.1); /* obrázok sa zväčší o 10% */
+}
+
+.block-personal-tile-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  margin-left: 16px;
+  color: #333;
+}
+
+.block-personal-tile-role {
+  font-size: 14px;
+  color: var(--bw-global-color-secondary);
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 16px;
+  margin-left: 16px;
+}
