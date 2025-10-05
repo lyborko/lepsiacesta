@@ -1,0 +1,35 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for node templates.
+ */
+function theme_suggestions_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  if (isset($variables['elements']['#node']) && $node = $variables['elements']['#node']) {
+    // Get alias for current node.
+    $path = '/node/' . $node->id();
+    $alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
+
+    // Convert alias to Twig-friendly name.
+    $alias = trim($alias, '/');
+    $alias = str_replace('/', '-', $alias);
+    $alias = str_replace('-', '_', $alias);
+
+    if (!empty($alias)) {
+      $suggestions[] = 'node__' . $alias;
+    }
+  }
+}
+
+
+function theme_suggestions_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $result = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+
+  $path_alias = trim($result, '/');
+  $path_alias = str_replace('/', '-', $path_alias);
+  $path_alias = str_replace('-', '_', $path_alias);
+
+  $suggestions[] = 'page__path_alias__'.$path_alias;
+}

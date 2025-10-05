@@ -1,0 +1,6 @@
+name: 'Theme Suggestions'
+type: module
+description: 'Adds Twig template suggestions for pages and nodes based on their path alias.'
+core_version_requirement: ^10 || ^11
+package: 'lyborko'
+version: 1.x
