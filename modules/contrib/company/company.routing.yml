@@ -1,0 +1,31 @@
+company.admin_config_company:
+  path: '/admin/config/company'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage' #  tento controller je v system.module ak by tam nebol, bude to vyhazovat chybu
+    _title: 'Company'
+  requirements:
+    _permission: 'access administration pages'
+
+company.settings.form:
+  path: '/admin/config/company/settings'
+  defaults:
+    _form: '\Drupal\company\form\CompanySettingsForm'
+    _title: 'Settings form for Company'
+  requirements:
+    _permission: 'administer site configuration'
+
+company.banks.form:
+  path: '/admin/config/company/banks'
+  defaults:
+    _form: '\Drupal\company\form\CompanyBanksForm'
+    _title: 'Form for Banks of the company'
+  requirements:
+    _permission: 'administer site configuration'
+
+company.addresses.form:
+  path: '/admin/config/company/addresses'
+  defaults:
+    _form: '\Drupal\company\form\CompanyAddressesForm'
+    _title: 'Addresses form for Company'
+  requirements:
+    _permission: 'administer site configuration'

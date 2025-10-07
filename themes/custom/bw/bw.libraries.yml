@@ -7,6 +7,9 @@ global:
       css/base/elements.css: {}
       css/base/fonts.css: {}
       css/base/properties.css: {}
+      css/base/colors.css: {}
+      css/base/links.css: {}
+      css/base/circle-icons.css: {}
     component:
       css/component/block.css: {}
       css/component/block-personal-tile.css: {}

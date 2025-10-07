@@ -1,0 +1,50 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function company_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.company':
+      $output = '';
+      $output .= '<h2>' . \Drupal::translation()->translate('Company settings.') . '</h2>';
+      $output .= '<h3>' . \Drupal::translation()->translate('Instructions') . '</h3>';
+      $output .= '<p>' . \Drupal::translation()->translate('Put all information of the company into predefined settins') . '</p>';
+    return $output;
+  }
+}
+
+function company_preprocess(&$variables) {
+  // Načítaj konfiguráciu modulu "company.settings"
+  $config_settings = \Drupal::config('company.settings');
+  $config_addresses = \Drupal::config('company.addresses');
+  $config_banks = \Drupal::config('company.banks');
+
+  // Odovzdaj údaje do Twigu
+  $variables['company'] = [
+    'name'  => $config_settings->get('name'),
+    'ICO'   => $config_settings->get('ICO'),
+    'DIC'   => $config_settings->get('DIC'),
+    'RegNo' => $config_settings->get('RegNo'),
+  ];
+
+  foreach ($config_addresses->get('addresses') as $key => $address) {
+      $variables['company']['addresses'][$key] = [
+        'street'  => $address['street'],
+        'street_number'  => $address['street_number'],
+        'city'    => $address['city'],
+        'city_code'    => $address['city_code'],
+      ];
+  }
+
+  foreach ($config_banks->get('accounts') as $key => $bank) {
+      $variables['company']['banks'][$key] = [
+        'bank'  => $bank['bank'],
+        'IBAN'  => $bank['IBAN'],
+        'description'   => $bank['description'],
+      ];
+  }
+
+}

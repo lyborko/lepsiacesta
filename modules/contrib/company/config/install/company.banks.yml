@@ -1,0 +1,13 @@
+accounts:
+  account_0:
+    bank: 'VUB'
+    IBAN: 'SK00 0000 0000 0000 0000 0000'
+    description: 'Universal'
+  account_1:
+    bank: 'FIO'
+    IBAN: 'SK50 0000 0000 0000 0000 0000'
+    description: '2 percenta'
+  account_2:
+    bank: 'FIO'
+    IBAN: 'SK50 1000 0000 0000 0000 0000'
+    description: 'Bratislavsky samospravny kraj'

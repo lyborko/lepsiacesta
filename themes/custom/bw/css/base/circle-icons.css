@@ -1,0 +1,14 @@
+			.circular-icon {
+				display: flex;
+				aspect-ratio: 1 / 1; /*dolezite, lebo pri resize to deformuje kruh*/
+				width: 50px;
+				height: 50px;
+				font-size: 25px;
+				/* background-color: var(--bw-global-color-secondary); */
+				/* padding: 10px; */
+				border-radius: 50%;
+				/* color: var(--bw-global-color-background); */
+				justify-content: center;
+				align-items: center;
+				box-sizing:border-box;
+			}

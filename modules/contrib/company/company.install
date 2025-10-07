@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Installation functions for the Pay By Square module.
+ */
+
+use Drupal\user\RoleInterface;
+
+/**
+ * Implements hook_install().
+ */
+function company_install() {
+  // user_role_change_permissions(RoleInterface::ANONYMOUS_ID, [
+  //     'Generate Pay By Square Image' => TRUE,
+  // ]);
+}

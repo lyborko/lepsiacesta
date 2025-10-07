@@ -1,0 +1,22 @@
+company.admin_config_company:
+  title: 'Company settings'
+  route_name: company.admin_config_company
+  parent: system.admin_config
+  weight: 0
+company.form.settings:
+  title: 'Company settings'
+  description: 'General settings of the company'
+  route_name: company.settings.form
+  parent: company.admin_config_company
+company.form.banks:
+  title: 'Bank accounts settings'
+  description: 'Manage bank accounts of the company.'
+  route_name: company.banks.form
+  # route_name: company.banks.form
+  parent: company.admin_config_company
+company.form.addresses:
+  title: 'Addresses settings'
+  description: 'Manage addresses of the company.'
+  route_name: company.addresses.form
+  # route_name: company.addresses.form
+  parent: company.admin_config_company

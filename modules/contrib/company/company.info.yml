@@ -1,0 +1,6 @@
+name: Company Configuration
+type: module
+description: 'Provide data of the company'
+package: Lyborko
+core_version_requirement: ^8 || ^9 || ^10
+configure: company.form

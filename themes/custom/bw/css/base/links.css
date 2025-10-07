@@ -1,0 +1,50 @@
+/* =======================================
+   🔗 Základný štýl pre všetky odkazy bw-link
+   ======================================= */
+.bw-link {
+  --link-color: var(--bw-global-color-text);
+  --link-hover-color: var(--bw-global-color-secondary);
+
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.bw-link:hover {
+  color: var(--link-hover-color);
+}
+
+/* =======================================
+   🧩 Farebné kombinácie (základ → hover)
+   ======================================= */
+
+/* Primárna farba → sekundárna farba */
+.primary-to-secondary-color {
+  --link-color: var(--bw-global-color-primary);
+  --link-hover-color: var(--bw-global-color-secondary);
+}
+
+/* Sekundárna farba → primárna farba */
+.secondary-to-primary-color {
+  --link-color: var(--bw-global-color-secondary);
+  --link-hover-color: var(--bw-global-color-primary);
+}
+
+/* Tmavá farba → sekundárna farba */
+.dark-to-secondary-color {
+  --link-color: var(--bw-global-color-dark);
+  --link-hover-color: var(--bw-global-color-secondary);
+}
+
+/* Textová farba → primárna farba */
+.text-to-primary-color {
+  --link-color: var(--bw-global-color-text);
+  --link-hover-color: var(--bw-global-color-primary);
+}
+
+/* Primárna → textová (jemný variant) */
+.primary-to-text-color {
+  --link-color: var(--bw-global-color-primary);
+  --link-hover-color: var(--bw-global-color-text);
+}

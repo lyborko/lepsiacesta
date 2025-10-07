@@ -1,0 +1,11 @@
+addresses:
+  address_0:
+    street: 'Kollárova'
+    street_number: '121/1'
+    city: 'Pezinok'
+    city_code: '902 01'
+  address_1:
+    street: 'Nám. 1. mája'
+    street_number: '2'
+    city: 'Senec'
+    city_code: '903 01 '
